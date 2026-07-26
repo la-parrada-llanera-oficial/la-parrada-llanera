@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Parada Llanera - Menú de Inicio</title>
+    <!-- Fuentes e Iconos -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Vinculación del CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- BARRA SUPERIOR -->
+    <div class="top-info-bar">
+        <div>
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Av. Miranda a 100m del Distribuidor Miranda</span>
+        </div>
+        <div>
+            <span class="badge-delivery"><i class="fa-solid fa-motorcycle"></i> DELIVERY GRATIS</span>
+            <i class="fa-solid fa-phone"></i> 0412 0883791
+        </div>
+    </div>
+
+    <!-- ENCABEZADO -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <div class="logo-icon"><i class="fa-solid fa-fire"></i></div>
+                <div class="logo-text">
+                    <h1>La Parada Llanera</h1>
+                    <span>Restaurante Campestre</span>
+                </div>
+            </a>
+            
+            <button class="cart-btn-header" onclick="toggleCart()">
+                <i class="fa-solid fa-basket-shopping"></i>
+                <span>Mi Pedido</span>
+                <div class="cart-count" id="cartCount">0</div>
+            </button>
+        </div>
+    </header>
+
+    <!-- HÉROE PRINCIPAL -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2 class="hero-title">¡Ven y disfruta de tu rica comida llanera!</h2>
+            <p class="hero-subtitle">El auténtico sabor de nuestro campo directamente a tu mesa.</p>
+        </div>
+    </section>
+
+    <!-- SECCIÓN MENÚ DE INICIO -->
+    <section class="menu-section" id="menu">
+        <div class="section-header">
+            <h3 class="section-title">Menú de Inicio</h3>
+        </div>
+
+        <!-- Buscador -->
+        <div class="search-bar">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="searchInput" placeholder="Buscar plato...">
+        </div>
+
+        <!-- Filtros de Categorías -->
+        <div class="categories-wrapper">
+            <button class="category-tab active" data-category="todos">Todos</button>
+            <button class="category-tab" data-category="parrillas">Parrillas</button>
+            <button class="category-tab" data-category="cachapas">Cachapas</button>
+            <button class="category-tab" data-category="bebidas">Bebidas</button>
+        </div>
+
+        <!-- Contenedor dinámico de platos -->
+        <div class="menu-grid" id="menuGrid"></div>
+    </section>
+
+    <!-- MODAL DEL CARRITO (LADO DERECHO) -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-modal-content">
+            <div class="cart-header">
+                <h3><i class="fa-solid fa-receipt"></i> Tu Pedido</h3>
+                <button class="close-cart" onclick="toggleCart()">&times;</button>
+            </div>
+
+            <div class="cart-items" id="cartItems"></div>
+
+            <div class="cart-footer">
+                <div class="cart-total-row">
+                    <span>Total estimado:</span>
+                    <span id="cartTotal">$0.00</span>
+                </div>
+
+                <div class="form-group">
+                    <input type="text" id="customerName" placeholder="Tu Nombre y Apellido">
+                </div>
+                <div class="form-group">
+                    <textarea id="customerAddress" rows="2" placeholder="Dirección exacta para el Delivery Gratis"></textarea>
+                </div>
+
+                <button class="btn-whatsapp" id="btnWhatsapp">
+                    <i class="fa-brands fa-whatsapp"></i> Enviar Pedido por WhatsApp
+                </button>
+            </div>
+        </div>
+    </div>
+<!-- SECCIÓN DE UBICACIÓN Y HORARIOS -->
+    <section class="location-section" id="ubicacion">
+        <div class="section-header">
+            <h3 class="section-title">Encuéntranos</h3>
+        </div>
+        
+        <div class="location-container">
+            <!-- Información de texto -->
+            <div class="location-info">
+                <h4><i class="fa-solid fa-clock"></i> Horarios de Atención</h4>
+                <ul>
+                    <li><strong>Lunes a Sabados:</strong> 10:30 AM - 5:00 PM</li>
+                </ul>
+
+                <h4 class="mt-4"><i class="fa-solid fa-location-dot"></i> Dirección</h4>
+                <p>Av. Miranda a 100m del Distribuidor Miranda.<br>Anaco, Estado Anzoátegui, Venezuela.</p>
+            </div>
+
+            <!-- Mapa Interactivo -->
+            <div class="location-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3936.7214717520025!2d-64.4725!3d9.435!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8c2d1b1111111111%3A0x1111111111111111!2sAv.%20Miranda%2C%20Anaco%2C%20Anzo%C3%A1tegui!5e0!3m2!1ses!2sve!4v1700000000000!5m2!1ses!2sve" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p><strong>Restaurante Campestre La Parada Llanera</strong> &copy; 2026.</p>
+    </footer>
+
+    <!-- Vinculación del JavaScript -->
+    <script src="Script.js"></script>
+</body>
+</html>
